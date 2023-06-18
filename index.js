@@ -11,7 +11,7 @@ function calculateAge(){
         alert("Please enter your birthday.");
     }else{
         let age = getAge(birthdayValue);
-        resultEl.innerText = `Your age is ${age} ${age > 1 ? "years" : "year"} old`;
+        resultEl.innerText = `Your age is ${age} ${age > 1 ? "years" : "year"} old `;
         
     }
 }
@@ -21,6 +21,7 @@ function getAge(birthdayValue){
     const birthdayDate = new Date(birthdayValue);
     const age = currentDate.getFullYear() - birthdayDate.getFullYear();
     const month = currentDate.getMonth() - birthdayDate.getMonth();
+    const day = currentDate.getDay() - birthdayDate.getDate();
 
     if(month < 0 || (month === 0 && currentDate.getDate()< birthdayDate.getDate())){
         age--;
